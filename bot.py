@@ -33,7 +33,7 @@ def fp(s):
 def sahibinden():
  il=[]
  try:
-  r=requests.get(f"https://www.sahibinden.com/otomobil?pagingSize=50&minPrice={MIN}&maxPrice={MAX}&sorting=date_desc",headers=H,proxies=gp(),timeout=15)
+  r=requests.get(f"https://www.sahibinden.com/otomobil?pagingSize=50&minPrice={MIN}&maxPrice={MAX}&sorting=date_desc",headers=H,proxies=None,timeout=15)
   soup=BeautifulSoup(r.text,"html.parser")
   for x in soup.select("tr.searchResultsItem"):
    try:
@@ -48,7 +48,7 @@ def sahibinden():
 def arabam():
  il=[]
  try:
-  r=requests.get(f"https://www.arabam.com/ikinci-el/otomobil?minPrice={MIN}&maxPrice={MAX}&sort=dateDesc&take=50",headers=H,proxies=gp(),timeout=15)
+  r=requests.get(f"https://www.arabam.com/ikinci-el/otomobil?minPrice={MIN}&maxPrice={MAX}&sort=dateDesc&take=50",headers=H,proxies=None,timeout=15)
   soup=BeautifulSoup(r.text,"html.parser")
   for x in soup.select("tr.listing-list-item"):
    try:
